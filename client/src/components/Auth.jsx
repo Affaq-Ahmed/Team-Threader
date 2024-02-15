@@ -13,9 +13,10 @@ const initialState = {
 	confirmPassword: '',
 };
 
+const cookies = new Cookies();
+
 const Auth = () => {
 	const [form, setForm] = useState(initialState);
-
 	const [isSignUp, setIsSignUp] = useState(true);
 
 	const handleChange = (e) => {
@@ -39,22 +40,33 @@ const Auth = () => {
 			avatarURL,
 		} = form;
 
-		const URL = 'http://localhost:5000/auth';
-		const data = {
-			username,
-			password,
-			fullName,
-			phoneNumber,
-			avatarURL,
-		};
-		const response = await axios.post(
+		const URL = 'http://localhost:5001/auth';
+
+		const {
+			data: { token, userId, hashedPassword },
+		} = await axios.post(
 			`${URL}/${isSignUp ? 'signup' : 'login'}`,
-			data
+			{
+				username,
+				password,
+				fullName,
+				phoneNumber,
+				avatarURL,
+			}
 		);
-		const cookies = new Cookies();
-		cookies.set('token', response.data.token, {
-			path: '/',
-		});
+
+		cookies.set('token', token);
+		cookies.set('username', username);
+		cookies.set('fullName', fullName);
+		cookies.set('userId', userId);
+
+		if (isSignUp) {
+			cookies.set('phoneNumber', phoneNumber);
+			cookies.set('avatarURL', avatarURL);
+			cookies.set('hashedPassword', hashedPassword);
+		}
+
+		window.location.reload();
 	};
 
 	return (
