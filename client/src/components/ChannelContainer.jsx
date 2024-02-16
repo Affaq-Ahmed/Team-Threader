@@ -13,7 +13,6 @@ import {
 	ChannelInner,
 	CreateChannel,
 	EditChannel,
-	TeamMessage,
 } from './';
 
 const ChannelContainer = ({
