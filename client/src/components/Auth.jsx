@@ -40,7 +40,8 @@ const Auth = () => {
 			avatarURL,
 		} = form;
 
-		const URL = 'http://localhost:5001/auth';
+		const URL =
+			'https://team-threader-production.up.railway.app/auth';
 
 		const {
 			data: { token, userId, hashedPassword },
