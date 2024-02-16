@@ -9,6 +9,7 @@ import { default as EditChannel } from './EditChannel';
 import { default as Auth } from './Auth';
 import { default as SideBar } from './SideBar';
 import { default as UserList } from './UserList';
+import { default as ResultsDropdown } from './ResultsDropdown';
 
 export {
 	ChannelContainer,
@@ -22,4 +23,5 @@ export {
 	Auth,
 	UserList,
 	SideBar,
+	ResultsDropdown,
 };
