@@ -6,8 +6,9 @@ import { default as TeamChannelPreview } from './TeamChannelPreview';
 import { default as ChannelInner } from './ChannelInner';
 import { default as CreateChannel } from './CreateChannel';
 import { default as EditChannel } from './EditChannel';
-import { default as TeamMessage } from './TeamMessage';
 import { default as Auth } from './Auth';
+import { default as UserList } from './UserList';
+import { default as ResultsDropdown } from './ResultsDropdown';
 
 export {
 	ChannelContainer,
@@ -18,6 +19,7 @@ export {
 	ChannelInner,
 	CreateChannel,
 	EditChannel,
-	TeamMessage,
 	Auth,
+	UserList,
+	ResultsDropdown,
 };
