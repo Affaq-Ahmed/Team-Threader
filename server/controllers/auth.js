@@ -91,7 +91,7 @@ const login = async (req, res) => {
 			userId: user.id,
 			hashedPassword: user.hashedPassword,
 			phoneNumber: user.phoneNumber,
-			avatarURL: user.avatarURL,
+			avatarURL: user.image,
 		});
 	} catch (error) {
 		console.log(error);
